@@ -7,8 +7,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Your Company</title>
 </head>
-
-<body class="bg-gradient-to-tr from-orange-400 via-amber-900 to-blue-500">
+<body class="bg-gradient-to-tr from-orange-400 via-amber-900 to-blue-500 bg-no-repeat h-fit	">
     <header class="antialiased">
         <nav class="bg-white border-gray-200 px-4 lg:px-6 py-2.5 dark:bg-gray-800">
             <div class="flex flex-wrap justify-between items-center">
@@ -44,7 +43,7 @@
         </nav>
     </header>
     <div class="flex">
-        <aside id="sidebar" class="hidden lg:flex flex-col w-64 h-screen px-4 py-8 overflow-y-auto bg-white border-r rtl:border-r-0 rtl:border-l dark:bg-gray-900 dark:border-gray-700">
+        <aside id="sidebar" class=" lg:flex flex-col w-64 h-screen px-4 py-8 overflow-y-auto bg-white border-r rtl:border-r-0 rtl:border-l dark:bg-gray-900 dark:border-gray-700 z-10	">
             <div class="flex flex-col justify-between flex-1 mt-6">
                 <nav>
                     <a id="dashboardButton" class="flex items-center px-4 py-2 text-gray-700 bg-gray-100 rounded-md dark:bg-gray-800 dark:text-gray-200" href="#">
@@ -98,7 +97,6 @@
                 </nav>
             </div>
         </aside>
-
         <div class="flex-1">
             <!-- table -->
             <div class="relative overflow-x-auto shadow-md ">
@@ -115,6 +113,9 @@
                             <th scope="col" class="px-6 py-3">
                                 Deadline
                             </th>
+                            <th scope="col" class="px-6 py-3">
+                                team
+                            </th>
                         </tr>
                     </thead>
                     <tbody>
@@ -124,6 +125,9 @@
                             </th>
                             <td class="px-6 py-4">
                                 Silver
+                            </td>
+                            <td class="px-6 py-4">
+                                Laptop
                             </td>
                             <td class="px-6 py-4">
                                 Laptop
@@ -139,6 +143,9 @@
                             <td class="px-6 py-4">
                                 Laptop PC
                             </td>
+                            <td class="px-6 py-4">
+                                Laptop
+                            </td>
                         </tr>
                         <tr class="bg-white dark:bg-gray-800">
                             <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
@@ -149,6 +156,9 @@
                             </td>
                             <td class="px-6 py-4">
                                 Accessories
+                            </td>
+                            <td class="px-6 py-4">
+                                Laptop
                             </td>
                         </tr>
                     </tbody>
@@ -358,83 +368,118 @@
                     </tbody>
                 </table>
             </div>
+            <section id="FAQ" class=" bg-transparent h-screen hidden">
+    <div class="container px-6 py-12 mx-auto">
+        <h1 class="text-2xl font-semibold text-gray-800 lg:text-3xl dark:text-white">Frequently asked questions.</h1>
+
+        <div class="grid grid-cols-1 gap-8 mt-8 lg:mt-16 md:grid-cols-2 xl:grid-cols-2">
+            <div>
+                <div class="inline-block p-3 text-white bg-blue-600 rounded-lg">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                </div>
+
+                <div>
+                    <h1 class="text-xl font-semibold text-gray-700 dark:text-white">Do i need a referral?</h1>
+
+                    <p class="mt-2 text-sm text-gray-500 dark:text-gray-300">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident placeat, consequatur eveniet veritatis quos dignissimos beatae dolores exercitationem laboriosam officia magnam atque blanditiis illum doloremque magni ex corrupti tempora quis.
+                    </p>
+                </div>
+            </div>
+
+            <div>
+                <div class="inline-block p-3 text-white bg-blue-600 rounded-lg">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                </div>
+
+                <div>
+                    <h1 class="text-xl font-semibold text-gray-700 dark:text-white">What is your cancellation policy?</h1>
+
+                    <p class="mt-2 text-sm text-gray-500 dark:text-gray-300">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident placeat, consequatur eveniet veritatis quos dignissimos beatae dolores exercitationem laboriosam officia magnam atque blanditiis illum doloremque magni ex corrupti tempora quis.
+                    </p>
+                </div>
+            </div>
+
+            <div>
+                <div class="inline-block p-3 text-white bg-blue-600 rounded-lg">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                </div>
+
+                <div>
+                    <h1 class="text-xl font-semibold text-gray-700 dark:text-white">What are the parking and public transport options?</h1>
+
+                    <p class="mt-2 text-sm text-gray-500 dark:text-gray-300">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident placeat, consequatur eveniet veritatis quos dignissimos beatae dolores exercitationem laboriosam officia magnam atque blanditiis illum doloremque magni ex corrupti tempora quis.
+                    </p>
+                </div>
+            </div>
         </div>
-        <script>
-            const projectTable = document.getElementById('projectTable');
-            const memberTable = document.getElementById('memberTable');
-            const scrumMasterTable = document.getElementById('scrumMasterTable');
-            const projectButton = document.getElementById('projectButton');
-            const dashboardButton = document.getElementById('dashboardButton');
-            const membersButton = document.getElementById('membersButton');
-            const scrumMasterButton = document.getElementById('scrumMasterButton');
-            const helpButton = document.getElementById('helpButton');
-            const logInButton = document.getElementById('logInButton');
-            const toggleSidebarButton = document.getElementById("toggleSidebar");
-            const sidebar = document.getElementById("sidebar");
+    </div>
+</section>
+<section id="dashboardpage" class=" bg-transparent h-screen hidden">
+    <div class="container px-6 py-12 mx-auto">
+        <h1 class="text-2xl font-semibold text-gray-800 lg:text-3xl dark:text-white">Frequently asked questions.</h1>
 
-            document.addEventListener("DOMContentLoaded", function() {
-                toggleSidebarButton.addEventListener("click", function() {
-                    sidebar.classList.toggle("hidden");
-                });
-            });
+        <div class="grid grid-cols-1 gap-8 mt-8 lg:mt-16 md:grid-cols-2 xl:grid-cols-2">
+            <div>
+                <div class="inline-block p-3 text-white bg-blue-600 rounded-lg">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                </div>
 
+                <div>
+                    <h1 class="text-xl font-semibold text-gray-700 dark:text-white">Do i need a referral?</h1>
 
-            projectButton.addEventListener('click', () => {
-                projectTable.classList.remove('hidden');
-            })
-            dashboardButton.addEventListener('click', () => {
-                projectTable.classList.add('hidden');
-            })
-            membersButton.addEventListener('click', () => {
-                projectTable.classList.add('hidden');
-            })
-            scrumMasterButton.addEventListener('click', () => {
-                projectTable.classList.add('hidden');
-            })
-            helpButton.addEventListener('click', () => {
-                projectTable.classList.add('hidden');
-            })
-            logInButton.addEventListener('click', () => {
-                projectTable.classList.add('hidden');
-            })
+                    <p class="mt-2 text-sm text-gray-500 dark:text-gray-300">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident placeat, consequatur eveniet veritatis quos dignissimos beatae dolores exercitationem laboriosam officia magnam atque blanditiis illum doloremque magni ex corrupti tempora quis.
+                    </p>
+                </div>
+            </div>
 
-            projectButton.addEventListener('click', () => {
-                memberTable.classList.add('hidden');
-            })
-            dashboardButton.addEventListener('click', () => {
-                memberTable.classList.add('hidden');
-            })
-            membersButton.addEventListener('click', () => {
-                memberTable.classList.remove('hidden');
-            })
-            scrumMasterButton.addEventListener('click', () => {
-                memberTable.classList.add('hidden');
-            })
-            helpButton.addEventListener('click', () => {
-                memberTable.classList.add('hidden');
-            })
-            logInButton.addEventListener('click', () => {
-                memberTable.classList.add('hidden');
-            })
-            
-            projectButton.addEventListener('click', () => {
-                scrumMasterTable.classList.add('hidden');
-            })
-            dashboardButton.addEventListener('click', () => {
-                scrumMasterTable.classList.add('hidden');
-            })
-            membersButton.addEventListener('click', () => {
-                scrumMasterTable.classList.add('hidden');
-            })
-            scrumMasterButton.addEventListener('click', () => {
-                scrumMasterTable.classList.remove('hidden');
-            })
-            helpButton.addEventListener('click', () => {
-                scrumMasterTable.classList.add('hidden');
-            })
-            logInButton.addEventListener('click', () => {
-                scrumMasterTable.classList.add('hidden');
-            })
+            <div>
+                <div class="inline-block p-3 text-white bg-blue-600 rounded-lg">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                </div>
+
+                <div>
+                    <h1 class="text-xl font-semibold text-gray-700 dark:text-white">What is your cancellation policy?</h1>
+
+                    <p class="mt-2 text-sm text-gray-500 dark:text-gray-300">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident placeat, consequatur eveniet veritatis quos dignissimos beatae dolores exercitationem laboriosam officia magnam atque blanditiis illum doloremque magni ex corrupti tempora quis.
+                    </p>
+                </div>
+            </div>
+
+            <div>
+                <div class="inline-block p-3 text-white bg-blue-600 rounded-lg">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                </div>
+
+                <div>
+                    <h1 class="text-xl font-semibold text-gray-700 dark:text-white">What are the parking and public transport options?</h1>
+
+                    <p class="mt-2 text-sm text-gray-500 dark:text-gray-300">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident placeat, consequatur eveniet veritatis quos dignissimos beatae dolores exercitationem laboriosam officia magnam atque blanditiis illum doloremque magni ex corrupti tempora quis.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+        </div>
+        <script src="js.js">
         </script>
 </body>
 
