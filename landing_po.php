@@ -7,7 +7,7 @@ $result_3 = mysqli_query($con, "SELECT * FROM teams , projects where teams.proje
 $result_2 = mysqli_query($con, "SELECT *
     FROM users
     JOIN teams ON teams.id = users.teamId
-    JOIN projects ON teams.projectId = projects.id
+    JOIN projects ON teams.id = projects.teamId
     WHERE users.role = 'scrum master'");
  
 ?>

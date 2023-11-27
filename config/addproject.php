@@ -3,9 +3,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $projectname = $_POST['projectname'];
     $description = $_POST['description'];
     $deadline = $_POST['deadline'];
-    $team = $_POST['teamId'];
-
-    $query = "INSERT INTO projects (project_name, description, deadline, team) VALUES ('$projectname', '$description', '$deadline', '$teamId')";
+    $teamI = $_POST['teamId'];
+    $query = "INSERT INTO projects (project_name, description, deadline , 	teamId) VALUES ('$projectname', '$description', '$deadline' , '$teamI')";
 
     mysqli_query($con, $query);
 
