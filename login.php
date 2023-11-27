@@ -56,7 +56,7 @@ require_once('config/loginSystem.php');
             <div class="flex-1">
                 <div class="text-center">
                     <div class="flex justify-center mx-auto">
-                        <img class="w-auto h-7 sm:h-8" src="https://merakiui.com/images/logo.svg" alt="">
+                        <img class="w-auto h-7 sm:h-8" src="img/logo.png" alt="">
                     </div>
                     <p class="mt-3 text-gray-500 dark:text-gray-300">Sign in to access your account</p>
                 </div>

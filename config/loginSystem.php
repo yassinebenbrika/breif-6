@@ -17,15 +17,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $role = $userData['role'];
 
         switch ($role) {
-            case 1:
+            case 'product owner':
                 header("Location: landing_po.php");
                 exit();
                 break;
-            case 2:
+            case 'scrum master':
                 header("Location: landing_sm.php");
                 exit();
                 break;
-            case 3:
+            case 'member':
                 header("Location: landing_mem.php");
                 exit();
                 break;
