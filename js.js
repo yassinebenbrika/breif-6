@@ -1,3 +1,13 @@
+
+document.addEventListener("DOMContentLoaded", function() {
+    const toggleSidebarButton = document.getElementById("toggleSidebar");
+    const sidebar = document.getElementById("sidebar");
+    
+    toggleSidebarButton.addEventListener("click", function() {
+        sidebar.classList.toggle("hidden");
+    });
+});
+/****************************************************************************************************************************************** */
 const projectTable = document.getElementById('projectTable');
 const memberTable = document.getElementById('memberTable');
 const scrumMasterTable = document.getElementById('scrumMasterTable');
@@ -10,15 +20,6 @@ const logInButton = document.getElementById('logInButton');
 const FAQ = document.getElementById("FAQ");
 const dashboardpage = document.getElementById("dashboardpage");
 
-
-document.addEventListener("DOMContentLoaded", function() {
-    const toggleSidebarButton = document.getElementById("toggleSidebar");
-    const sidebar = document.getElementById("sidebar");
-    
-    toggleSidebarButton.addEventListener("click", function() {
-        sidebar.classList.toggle("hidden");
-    });
-});
 
 
 projectButton.addEventListener('click', () => {
@@ -116,3 +117,4 @@ logInButton.addEventListener('click', () => {
     dashboardpage.classList.add('hidden');
 })
 
+/******************************************************************************************************************************************/
