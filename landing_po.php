@@ -3,8 +3,9 @@ require_once('config/db.php');
 require_once('config/addproject.php');
 require_once('delete_project_form.php');
 
+
 $result = mysqli_query($con, "SELECT * FROM projects , equipe where equipe.id = projects.teamId");
-$result_1 = mysqli_query($con, "SELECT * FROM users , equipe where equipe.id = users.teamId and role ='member' ");
+$result_1 = mysqli_query($con, "SELECT * FROM users  where role ='member' ");
 $result_3 = mysqli_query($con, "SELECT * FROM equipe , projects where equipe.id = projects.teamId  ");
 $result_2 = mysqli_query($con, "SELECT DISTINCT users.*, equipe.*
     FROM users
@@ -194,9 +195,6 @@ $result_2 = mysqli_query($con, "SELECT DISTINCT users.*, equipe.*
                                 email
                             </th>
                             <th scope="col" class="px-6 py-3 text-center">
-                                team
-                            </th>
-                            <th scope="col" class="px-6 py-3 text-center">
                                 role
                             </th>
                             <th scope="col" class="px-6 py-3 text-center">
@@ -213,21 +211,24 @@ $result_2 = mysqli_query($con, "SELECT DISTINCT users.*, equipe.*
                                 <td class="text-center"><?php echo $row['lastname'] ?></td>
                                 <td class="text-center"><?php echo $row['phone'] ?></td>
                                 <td class="text-center"><?php echo $row['email'] ?></td>
-                                <td class="text-center"><?php echo $row['team'] ?></td>
                                 <td class="text-center"><?php echo $row['role'] ?></td>
                                 <td class="px-4 py-4 text-sm">
                                     <div class="flex items-center justify-center gap-x-6">
-                                        <button class="text-gray-500 transition-colors duration-200 dark:hover:text-yellow-500 dark:text-gray-300 hover:text-yellow-500 focus:outline-none flex items-center">
-                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
-                                                <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
-                                            </svg>
-                                        </button>
+                                        <form action="update_role.php" method="post">
+                                            <input type="hidden" name="user_id" value="<?php echo $row['id']; ?>">
+                                            <button class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-black hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800">
+                                                <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
+                                                    chnage to scrum Master
+                                                </span>
+                                            </button>
+                                        </form>
                                     </div>
                                 </td>
-
-                            <?php
+                            </tr>
+                        <?php
                         }
-                            ?>
+                        ?>
+
                     </tbody>
                 </table>
             </div>
@@ -269,11 +270,14 @@ $result_2 = mysqli_query($con, "SELECT DISTINCT users.*, equipe.*
                                 <td class="text-center"><?php echo $row['email'] ?></td>
                                 <td class="px-4 py-4 text-sm">
                                     <div class="flex items-center justify-center gap-x-6">
-                                        <button class="text-gray-500 transition-colors duration-200 dark:hover:text-yellow-500 dark:text-gray-300 hover:text-yellow-500 focus:outline-none flex items-center">
-                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
-                                                <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
-                                            </svg>
-                                        </button>
+                                        <form action="update_role.php" method="post">
+                                            <input type="hidden" name="userid" value="<?php echo $row['id']; ?>">
+                                            <button class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-black hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800">
+                                                <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
+                                                    chnage to member
+                                                </span>
+                                            </button>
+                                        </form>
                                     </div>
                                 </td>
 
@@ -287,7 +291,7 @@ $result_2 = mysqli_query($con, "SELECT DISTINCT users.*, equipe.*
                 <table id="FAQ" class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400 hidden">
                     <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                         <tr>
-                            <th scope="col" class="px-6 py-3 text-center">
+                            <th scope="col" class="px-6 py-4 text-center">
                                 Team's Name
                             </th>
                             <th scope="col" class="px-6 py-3 text-center">
@@ -315,8 +319,8 @@ $result_2 = mysqli_query($con, "SELECT DISTINCT users.*, equipe.*
                         // Iterate through teams and display the project names
                         foreach ($teams as $teamName => $projectNames) {
                             echo '<tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">';
-                            echo '<td class="text-center">' . $teamName . '</td>';
-                            echo '<td class="text-center">' . implode(', <br> ', $projectNames) . '</td>';
+                            echo '<td class="text-center px-6 py-4">' . $teamName . '</td>';
+                            echo '<td class="text-center px-6 py-4">' . implode(', <br> ', $projectNames) . '</td>';
                             echo '</tr>';
                         }
                         ?>
