@@ -1,5 +1,6 @@
 <?php
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    
     $projectname = $_POST['projectname'];
     $description = $_POST['description'];
     $deadline = $_POST['deadline'];
