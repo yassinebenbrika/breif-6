@@ -1,7 +1,6 @@
 <?php
 require_once('config/db.php');
-require_once('config/addproject.php');
-require_once('delete_project_form.php');
+
 
 
 $result = mysqli_query($con, "SELECT * FROM projects , equipe where equipe.id = projects.teamId");
