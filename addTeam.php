@@ -3,14 +3,30 @@ require_once('config/db.php');
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     
-    $teamname = $_POST['teamname']; // Fix the array key here
-    $query = "INSERT INTO equipe (team) VALUES ('$teamname')"; // Fix the extra single quote here
+    $teamname = $_POST['teamname'];
 
-    mysqli_query($con, $query);
+    // Use prepared statements to prevent SQL injection
+    $query = "INSERT INTO equipe (team) VALUES (?)";
+    $stmt = mysqli_prepare($con, $query);
 
-    header("Location: landing_po.php");
+    // Bind parameters
+    mysqli_stmt_bind_param($stmt, "s", $teamname);
+
+    // Execute the statement
+    if (mysqli_stmt_execute($stmt)) {
+        // Query executed successfully
+        header("Location: landing_sm.php");
+    } else {
+        // Error handling
+        echo "Error: " . mysqli_error($con);
+    }
+
+    // Close the statement and connection
+    mysqli_stmt_close($stmt);
+    mysqli_close($con);
 }
 ?>
+
 
 
 <!DOCTYPE html>

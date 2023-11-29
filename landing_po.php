@@ -6,7 +6,7 @@ require_once('delete_project_form.php');
 
 $result = mysqli_query($con, "SELECT * FROM projects , equipe where equipe.id = projects.teamId");
 $result_1 = mysqli_query($con, "SELECT * FROM users  where role ='member' ");
-$result_3 = mysqli_query($con, "SELECT * FROM equipe , projects where equipe.id = projects.teamId  ");
+$result_3 = mysqli_query($con, "SELECT DISTINCT team, id FROM equipe");
 $result_2 = mysqli_query($con, "SELECT DISTINCT users.*, equipe.*
     FROM users
     JOIN equipe ON equipe.id = users.teamId
@@ -150,7 +150,7 @@ $result_2 = mysqli_query($con, "SELECT DISTINCT users.*, equipe.*
 
 
                                 <td class="px-4 py-4 text-sm ">
-                                    <div class="flex items-center gap-x-6">
+                                    <div class="flex items-center gap-x-6 justify-center">
                                         <form method="post" action="delete_project_form.php">
                                             <input type="hidden" name="projectName" value="<?php echo $row['project_name']; ?>">
                                             <button type="submit" class="text-gray-500 transition-colors duration-200 dark:hover:text-red-500 dark:text-gray-300 hover:text-red-500 focus:outline-none j-center">
@@ -288,43 +288,31 @@ $result_2 = mysqli_query($con, "SELECT DISTINCT users.*, equipe.*
                 </table>
             </div>
             <div class="relative overflow-x-auto shadow-md ">
-                <table id="FAQ" class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400 hidden">
+            <table id="FAQ" class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400 hidden">
                     <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                         <tr>
+                        <th scope="col" class="px-6 py-4 text-center">
+                                Team's ID
+                            </th>
                             <th scope="col" class="px-6 py-4 text-center">
                                 Team's Name
-                            </th>
-                            <th scope="col" class="px-6 py-3 text-center">
-                                Project's Name
                             </th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php
-                        $teams = array();
-
                         while ($row = mysqli_fetch_assoc($result_3)) {
+                            $id = $row['id'];
                             $teamName = $row['team'];
-                            $projectName = $row['project_name'];
-
-                            // Check if the team is already in the array
-                            if (!isset($teams[$teamName])) {
-                                $teams[$teamName] = array(); // Initialize an empty array for the team
-                            }
-
-                            // Add the project name to the team's array
-                            $teams[$teamName][] = $projectName;
-                        }
-
-                        // Iterate through teams and display the project names
-                        foreach ($teams as $teamName => $projectNames) {
                             echo '<tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">';
+                            echo '<td class="text-center px-6 py-4">' . $id . '</td>';
                             echo '<td class="text-center px-6 py-4">' . $teamName . '</td>';
-                            echo '<td class="text-center px-6 py-4">' . implode(', <br> ', $projectNames) . '</td>';
                             echo '</tr>';
                         }
                         ?>
                     </tbody>
+
+
                 </table>
 
             </div>
