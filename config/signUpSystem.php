@@ -17,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } else {
         
         // Insert data into the database with the plain text password
-        $query = "INSERT INTO users (firstname, Lastname, phone, email ,password , role) VALUES ('$firstname', '$lastname', '$phone', '$email', '$password' , 'member')";
+        $query = "INSERT INTO users (firstname, Lastname, phone, email , teamId ,password , role ) VALUES ('$firstname', '$lastname', '$phone', '$email', 10 , '$password' , 'member' )";
         if (mysqli_query($con, $query))  {
             $errorMessage = "User registered successfully!";
             header("Location: login.php");

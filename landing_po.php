@@ -5,7 +5,7 @@ require_once('config/db.php');
 
 $result = mysqli_query($con, "SELECT * FROM projects , equipe where equipe.id = projects.teamId");
 $result_1 = mysqli_query($con, "SELECT * FROM users  where role ='member' ");
-$result_3 = mysqli_query($con, "SELECT DISTINCT team, id FROM equipe");
+$result_3 = mysqli_query($con, "SELECT DISTINCT team, id FROM equipe WHERE id != 10");
 $result_2 = mysqli_query($con, "SELECT DISTINCT users.*, equipe.*
     FROM users
     JOIN equipe ON equipe.id = users.teamId

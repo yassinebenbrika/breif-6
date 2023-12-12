@@ -2,8 +2,6 @@
 require_once('config/db.php');
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['projectName'])) {
-    // Fetch the project name from the form
-    $projectName = $_POST['projectName'];
 
     // Fetch the existing project information based on the project name
     $result = mysqli_query($con, "SELECT * FROM projects , equipe where equipe.id = projects.teamId");
